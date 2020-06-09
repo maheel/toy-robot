@@ -14,7 +14,7 @@ export class LeftCommand extends Command implements CommandInterface {
   /**
    * Valid left movements
    */
-  private leftMovements = {
+  private leftMovements: object = {
     [ValidDirection.NORTH]: ValidDirection.WEST,
     [ValidDirection.WEST]: ValidDirection.SOUTH,
     [ValidDirection.SOUTH]: ValidDirection.EAST,
@@ -25,8 +25,6 @@ export class LeftCommand extends Command implements CommandInterface {
    * Rotate the robot anti-clockwise
    */
   public execute(): boolean {
-    console.log('Execute Left');
-
     const newDirection = this.leftMovements[this.robot.getCurrentDirection()];
     this.robot.setCurrentDirection(newDirection);
 

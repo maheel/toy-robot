@@ -6,7 +6,7 @@ describe('ReportCommand', () => {
   describe('execute', () => {
     it('reports position of the robot successfully', async () => {
       const robot = new Robot();
-      const reportCommand = new ReportCommand(robot);
+      const reportCommand: ReportCommand = new ReportCommand(robot);
 
       const actualResult = reportCommand.execute();
 

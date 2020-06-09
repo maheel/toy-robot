@@ -14,8 +14,6 @@ export class ReportCommand extends Command implements CommandInterface {
    * Report the current position of the robot
    */
   public execute(): string {
-    console.log('Execute Report');
-
     return `${this.robot.getCurrentPositionX()},${this.robot.getCurrentPositionY()},${this.robot.getCurrentDirection()}`;
   }
 }

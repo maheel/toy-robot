@@ -17,12 +17,11 @@ export class PlaceCommand extends Command implements CommandInterface {
    * @param args
    */
   public execute(args : any[]): boolean {
-    console.log('Execute Place', args);
+    let isMoved: boolean = false;
 
-    let isMoved = false;
-    const positionX = Number(args[0]);
-    const positionY = Number(args[1]);
-    const direction = args[2];
+    const positionX: number = Number(args[0]);
+    const positionY: number = Number(args[1]);
+    const direction: string = args[2];
 
     if (isValidPosition(positionX, positionY) && isValidDirection(direction)) {
       isMoved = true;

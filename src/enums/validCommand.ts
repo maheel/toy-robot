@@ -1,3 +1,6 @@
+/**
+ * Valid commands
+ */
 export enum ValidCommand {
     PLACE = 'PLACE',
     MOVE = 'MOVE',

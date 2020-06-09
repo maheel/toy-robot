@@ -13,7 +13,7 @@ describe('MoveCommand', () => {
 
     it('moves robot successfully', async () => {
       const robot = new Robot();
-      const moveCommand = new MoveCommand(robot);
+      const moveCommand: MoveCommand = new MoveCommand(robot);
 
       isValidPosition = jest.spyOn(ValidPosition, 'isValidPosition').mockReturnValue(true);
       const actualResult = moveCommand.execute();
@@ -28,7 +28,7 @@ describe('MoveCommand', () => {
 
     it('does not move robot when invalid command is given', async () => {
       const robot = new Robot();
-      const moveCommand = new MoveCommand(robot);
+      const moveCommand: MoveCommand = new MoveCommand(robot);
 
       isValidPosition = jest.spyOn(ValidPosition, 'isValidPosition').mockReturnValue(false);
       const actualResult = moveCommand.execute();

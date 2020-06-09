@@ -16,11 +16,9 @@ export class MoveCommand extends Command implements CommandInterface {
    * Move the robot forward
    */
   public execute(): boolean {
-    console.log('Execute Move');
-
-    let currentPositionX = this.robot.getCurrentPositionX();
-    let currentPositionY = this.robot.getCurrentPositionY();
-    const currentDirection = this.robot.getCurrentDirection();
+    let currentPositionX: number = this.robot.getCurrentPositionX();
+    let currentPositionY: number = this.robot.getCurrentPositionY();
+    const currentDirection: string = this.robot.getCurrentDirection();
 
     switch (currentDirection) {
       case ValidDirection.NORTH:
@@ -40,7 +38,7 @@ export class MoveCommand extends Command implements CommandInterface {
         break;
     }
 
-    let isMoved = false;
+    let isMoved: boolean = false;
 
     if (isValidPosition(currentPositionX, currentPositionY)) {
       isMoved  = true;

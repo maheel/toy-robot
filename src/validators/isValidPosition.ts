@@ -6,7 +6,7 @@ import { Table } from '../enums/table';
  * @param positionY
  */
 export const isValidPosition = (positionX: number, positionY: number): boolean => {
-  let isValid = true;
+  let isValid: boolean = true;
 
   if (positionX < Table.ORIGIN_X_POSITION ||
       positionY < Table.ORIGIN_Y_POSITION ||

@@ -14,7 +14,7 @@ export class RightCommand extends Command implements CommandInterface {
   /**
    * Valid Right movements
    */
-  private rightMovements = {
+  private rightMovements: object = {
     [ValidDirection.NORTH]: ValidDirection.EAST,
     [ValidDirection.EAST]: ValidDirection.SOUTH,
     [ValidDirection.SOUTH]: ValidDirection.WEST,
@@ -25,8 +25,6 @@ export class RightCommand extends Command implements CommandInterface {
    * Rotate the robot clockwise
    */
   public execute(): boolean {
-    console.log('Execute Right');
-
     const newDirection = this.rightMovements[this.robot.getCurrentDirection()];
     this.robot.setCurrentDirection(newDirection);
 

@@ -7,8 +7,9 @@
     "start": "tsc && node build/index.js",
     "build": "tsc",
     "lint": "tslint -p tsconfig.json -c tslint.json",
-    "test": "jest --verbose",
-    "test:coverage": "jest --coverage"
+    "test": "npm run clean && jest --verbose",
+    "test:coverage": "npm run clean && jest --coverage",
+    "clean": "rm -Rf build"
   },
   "author": "Maheel De Silva",
   "license": "ISC",

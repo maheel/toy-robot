@@ -5,8 +5,8 @@ jest.mock('../../src/robot');
 describe('LeftCommand', () => {
   describe('execute', () => {
     it('rotates robot successfully', async () => {
-      const robot = new Robot();
-      const leftCommand = new LeftCommand(robot);
+      const robot: Robot = new Robot();
+      const leftCommand: LeftCommand = new LeftCommand(robot);
 
       const actualResult = leftCommand.execute();
 

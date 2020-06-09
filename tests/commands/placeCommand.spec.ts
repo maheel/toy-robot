@@ -16,7 +16,7 @@ describe('PlaceCommand', () => {
 
     it('places robot successfully with valid place command', async () => {
       const robot = new Robot();
-      const placeCommand = new PlaceCommand(robot);
+      const placeCommand: PlaceCommand = new PlaceCommand(robot);
 
       isValidPosition = jest.spyOn(ValidPosition, 'isValidPosition').mockReturnValue(true);
       isValidDirection = jest.spyOn(ValidDirection, 'isValidDirection').mockReturnValue(true);
@@ -32,7 +32,7 @@ describe('PlaceCommand', () => {
 
     it('throws an error when position is invalid', async () => {
       const robot = new Robot();
-      const placeCommand = new PlaceCommand(robot);
+      const placeCommand: PlaceCommand = new PlaceCommand(robot);
 
       isValidPosition = jest.spyOn(ValidPosition, 'isValidPosition').mockReturnValue(false);
       isValidDirection = jest.spyOn(ValidDirection, 'isValidDirection').mockReturnValue(true);
@@ -51,7 +51,7 @@ describe('PlaceCommand', () => {
 
     it('throws an error when direction is invalid', async () => {
       const robot = new Robot();
-      const placeCommand = new PlaceCommand(robot);
+      const placeCommand: PlaceCommand = new PlaceCommand(robot);
 
       isValidPosition = jest.spyOn(ValidPosition, 'isValidPosition').mockReturnValue(true);
       isValidDirection = jest.spyOn(ValidDirection, 'isValidDirection').mockReturnValue(false);
@@ -70,7 +70,7 @@ describe('PlaceCommand', () => {
 
     it('throws an error when both direction and position are invalid', async () => {
       const robot = new Robot();
-      const placeCommand = new PlaceCommand(robot);
+      const placeCommand: PlaceCommand = new PlaceCommand(robot);
 
       isValidPosition = jest.spyOn(ValidPosition, 'isValidPosition').mockReturnValue(false);
       isValidDirection = jest.spyOn(ValidDirection, 'isValidDirection').mockReturnValue(false);

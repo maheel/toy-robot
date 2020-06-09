@@ -4,6 +4,7 @@ import { PlaceCommand } from './placeCommand';
 import { MoveCommand } from './moveCommand';
 import { ReportCommand } from './reportCommand';
 import { ValidCommand } from '../enums/validCommand';
+import { CommandInterface } from './commandInterface';
 import { Robot } from '../robot';
 
 /**
@@ -24,7 +25,7 @@ export class CommandFactory {
    * Generates command based on the command type
    * @param commandType
    */
-  public create(commandType: string) {
+  public create(commandType: string): CommandInterface  {
     let commandObject;
 
     switch (commandType) {

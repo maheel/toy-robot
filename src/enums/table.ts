@@ -1,3 +1,6 @@
+/**
+ * Values related to the table coordinates
+ */
 export enum Table {
     UNITS_X = 5,
     UNITS_Y = 5,

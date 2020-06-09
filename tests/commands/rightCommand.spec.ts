@@ -6,7 +6,7 @@ describe('LeftCommand', () => {
   describe('execute', () => {
     it('rotates robot successfully', async () => {
       const robot = new Robot();
-      const rightCommand = new RightCommand(robot);
+      const rightCommand: RightCommand = new RightCommand(robot);
 
       const actualResult = rightCommand.execute();
 

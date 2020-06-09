@@ -1,6 +1,7 @@
-import { executeCommands } from '../../src/services/robotSimulatorService';
+import { RobotSimulatorService } from '../../src/services/robotSimulatorService';
 
 describe('robotSimulatorService', () => {
+  const robotSimulatorService  = new RobotSimulatorService();
   describe('executeCommands', () => {
     it('moves robot successfully', async () => {
       const commands: string[] = [
@@ -11,7 +12,7 @@ describe('robotSimulatorService', () => {
         'MOVE',
         'REPORT',
       ];
-      const actualResult = executeCommands(commands);
+      const actualResult = robotSimulatorService.executeCommands(commands);
 
       const expectedResult = '3,3,NORTH';
 
@@ -26,7 +27,7 @@ describe('robotSimulatorService', () => {
         'MOVE',
         'REPORT',
       ];
-      const actualResult = executeCommands(commands);
+      const actualResult = robotSimulatorService.executeCommands(commands);
 
       const expectedResult = '0,0,SOUTH';
 
@@ -42,7 +43,7 @@ describe('robotSimulatorService', () => {
         'MOVE',
         'REPORT',
       ];
-      const actualResult = executeCommands(commands);
+      const actualResult = robotSimulatorService.executeCommands(commands);
 
       const expectedResult = '0,0,WEST';
 
@@ -59,7 +60,7 @@ describe('robotSimulatorService', () => {
         'REPORT',
       ];
       try {
-        executeCommands(commands);
+        robotSimulatorService.executeCommands(commands);
       } catch (error) {
         expect(error.message).toBe('Invalid place command!. Please correct it and try again.');
       }

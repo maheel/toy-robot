@@ -1,3 +1,6 @@
+/**
+ * Valid directions
+ */
 export enum ValidDirection {
     NORTH = 'NORTH',
     SOUTH = 'SOUTH',

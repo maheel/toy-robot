@@ -18,7 +18,7 @@ export class Invoker {
    * Run the command with provided arguments
    * @param args
    */
-  public run(args?: string[]) {
+  public run(args?: string[]): any {
     return this.command.execute(args);
   }
 }

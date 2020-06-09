@@ -5,7 +5,7 @@ import { ValidDirection } from '../enums/validDirection';
  * @param direction
  */
 export const isValidDirection = (direction: string): boolean => {
-  let isValid = false;
+  let isValid: boolean = false;
 
   if (direction in ValidDirection) {
     isValid = true;

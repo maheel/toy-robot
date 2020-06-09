@@ -3,31 +3,32 @@ import { Invoker } from '../invoker';
 import { isValidCommand } from '../validators/isValidCommand';
 
 /**
- * Execute a commands
- * @param commands
+ * Robot simulator service
  */
-export const executeCommands = (commands: string[]) => {
-  console.log('All commands', commands);
+export class RobotSimulatorService {
+  /**
+   * Execute a commands
+   * @param commands
+   */
+  public executeCommands(commands: string[]) {
+    const commandFactory = new CommandFactory();
 
-  const commandFactory = new CommandFactory();
+    const response = commands.map((command) => {
+      const commandParts = command.split(' ');
+      const commandType = commandParts[0];
+      const commandArguments = (typeof commandParts[1] !== 'undefined') ?
+        commandParts[1].split(',') : [];
 
-  const response = commands.map((command) => {
-    const commandParts = command.split(' ');
-    const commandType = commandParts[0];
+      if (isValidCommand(commandType)) {
+        const commandObject = commandFactory.create(commandType);
 
-    const commandArguments = (typeof commandParts[1] !== 'undefined') ?
-      commandParts[1].split(',') : [];
+        const invoker = new Invoker();
+        invoker.setCommand(commandObject);
 
-    if (isValidCommand(commandType)) {
-      const commandObject = commandFactory.create(commandType);
+        return invoker.run(commandArguments);
+      }
+    });
 
-      const invoker = new Invoker();
-      invoker.setCommand(commandObject);
-
-      return invoker.run(commandArguments);
-    }
-  });
-
-  console.log(response);
-  return response.pop();
-};
+    return response.pop();
+  }
+}
