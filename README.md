@@ -24,7 +24,7 @@ required.
 ## Run the application
 
 Start the application using the following command and keep entering robot commands on the CLI. Please input commands one by one.
-Ex: Enter the PLACE command first and then press enter key, and keep doing the same. Once the REPORT
+Ex: Enter the PLACE command first and then press enter key, and repeat the same for other commands. Once the REPORT
 command is entered, it will display the current position of the robot.
       
       yarn start / npm start
