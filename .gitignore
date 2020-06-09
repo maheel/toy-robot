@@ -1,0 +1,16 @@
+# IDEs and editors
+/.idea
+
+# dependencies
+/node_modules
+
+# misc
+/coverage
+npm-debug.log
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# compiled output
+/build
