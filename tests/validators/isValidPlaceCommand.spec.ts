@@ -1,6 +1,6 @@
 import { isValidPlaceCommand } from '../../src/validators/isValidPlaceCommand';
 
-describe('isValidCommand', () => {
+describe('isValidPlaceCommand', () => {
   it('returns true when place command is valid', async () => {
     const actualResult: boolean = isValidPlaceCommand('PLACE 0,0,1');
     expect(actualResult).toBe(true);
