@@ -13,7 +13,11 @@ required.
 
        nvm install 12.16
        
-3. Install Dependencies (I have used Yarn and yarn.lock file has been pushed to the repository)
+3. Install Typescript
+
+       npm install -g typescript
+      
+4. Install Dependencies (I have used Yarn and yarn.lock file has been pushed to the repository)
    
        yarn install / npm install
        
